@@ -1,0 +1,84 @@
+//--- Different devices resolutions
+@mixin respond-to($media) {
+    @if $media == xs {
+      @media only screen and (max-width: 575px) { @content; }
+    }
+    @else if $media == xs_up {
+        @media only screen and (min-width: 576px) { @content; }
+    }
+    @else if $media == sm {
+        @media only screen and (max-width: 767px) { @content; }
+    }
+    @else if $media == sm_up {
+        @media only screen and (min-width: 768px) { @content; }
+    }
+    @else if $media == md {
+        @media only screen and (max-width: 991px) { @content; }
+    }
+    @else if $media == md_up {
+        @media only screen and (min-width: 992px) { @content; }
+    }
+    @else if $media == lg {
+        @media only screen and (max-width: 1249px) { @content; }
+    }
+    @else if $media == lg_up {
+        @media only screen and (min-width: 1250px) { @content; }
+    }
+    @else if $media == xl {
+        @media only screen and (max-width: 1440px) { @content; }
+    }
+    @else if $media == xl_up {
+        @media only screen and (min-width: 1441px) { @content; }
+    }
+    @else if $media == xxl_up {
+        @media only screen and (min-width: 1921px) { @content; }
+    }
+}
+
+//--- FontSize
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+@mixin fsz($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+//--- Text Truncate
+@mixin truncateText(){
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+//--- Centering anything
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin center_v {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+//--- Clearfix
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+//--- Placeholder
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content};
+  &:-moz-placeholder           {@content};
+  &::-moz-placeholder          {@content};
+  &:-ms-input-placeholder      {@content};
+}

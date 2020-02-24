@@ -1,0 +1,30 @@
+/*--- Typography ---*/
+body{
+  font-family: $font-main;
+  font-size: 16px;
+  line-height: 1;
+  background: $color-black;
+  color: $color-white;
+  font-weight: $font-medium;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+a {
+  transition: 250ms;
+  text-decoration: none;
+  color: $color-white;
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+button, .btn{
+  transition: 250ms;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

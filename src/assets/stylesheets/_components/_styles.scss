@@ -1,0 +1,219 @@
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 120px 20px 80px;
+  @include respond-to(xl_up){
+    padding: 192px 20px 112px;
+  }
+}
+
+.logo{
+  max-width: 582px;
+  margin-bottom: 30px;
+  padding: 0 20px;
+  img{
+    width: 100%;
+  }
+}
+.subheading{
+  @include fsz(24px);
+  text-align: center;
+  font-weight: $font-semibold;
+  @include respond-to(sm){
+    @include fsz(20px);
+  }
+}
+
+.description{
+  max-width: 684px;
+  @include fsz(24px);
+  line-height: 1.33;
+  margin-top: 72px;
+  text-align: center;
+  @include respond-to(xl_up){
+    margin-top: 92px;
+  }
+  @include respond-to(sm){
+    @include fsz(18px);
+    margin-top: 48px;
+  }
+}
+
+.services {
+  margin-top: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 100%;
+  flex-wrap: wrap;
+  @include respond-to(md){
+    max-width: 600px;
+  }
+  @include respond-to(xl_up){
+    margin-top: 128px;
+  }
+  @include respond-to(sm){
+    margin-top: 60px;
+  }
+  li{
+    flex: 1 1 auto;
+    text-align: center;
+    @include respond-to(md){
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin-bottom: 60px;
+    }
+    h3{
+      color: $color-silver;
+      @include fsz(24px);
+      width: 200px;
+      margin: 0 auto;
+      white-space: nowrap;
+      @include respond-to(sm){
+        width: auto;
+        @include fsz(18px);
+      }
+    }
+  }
+  &__img{
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    margin: 0 auto 24px;
+    border: 2px solid $color-dove-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include respond-to(sm){
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+
+.clients {
+  max-width: 1160px;
+  width: 100%;
+  margin: 160px auto 0;
+  @include respond-to(xl_up){
+    margin: 232px auto 0;
+  }
+  @include respond-to(md){
+    margin: 80px auto 0;
+  }
+  @include respond-to(sm){
+    margin: 48px auto 0;
+  }
+  h2{
+    @include fsz(56px);
+    font-weight: $font-semibold;
+    text-align: center;
+    @include respond-to(sm){
+      @include fsz(32px);
+    }
+  }
+  .tns-liveregion{
+    display: none;
+  }
+  .tns-controls{
+    @include center-v();
+    width: calc(100% + 168px);
+    left: -84px;
+    @include respond-to(lg){
+      width: calc(100% + 100px);
+      left: -50px;
+    }
+    @include respond-to(sm){
+      transform: none;
+      right: 10px;
+      left: auto;
+      width: 56px;
+      top: -40px;
+    }
+    button{
+      &:hover{
+        opacity: 0.6;
+        @include respond-to(sm){
+          opacity: 1;
+        }
+      }
+    }
+    img{
+      height: 48px;
+      @include respond-to(sm){
+        height: 28px;
+      }
+    }
+    button[data-controls="next"]{
+      position: absolute;
+      right: 0;
+    }
+  }
+  .tns-outer{
+    position: relative;
+    margin: 0 100px;
+    @include respond-to(sm){
+      margin: 0 -20px;
+    }
+  }
+  .tns-ovh{
+    margin-top: 64px;
+    border: 1px solid $color-mine-shaft;
+    @include respond-to(sm){
+      margin-top: 48px;
+    }
+  }
+  .tns-inner{
+    width: calc(100% + 1px);
+  }
+}
+.clients-block {
+  padding-bottom: 100%;
+  position: relative;
+  width: 100%;
+  height: 0;
+  border-right: 1px solid $color-mine-shaft;
+  a{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  img{
+    @include center();
+    @include respond-to(sm){
+      transform: translate(-50%, -50%) scale(0.85);
+    }
+  }
+  img[src$=".png"]{
+    max-width: 160px;
+    max-height: 70px;
+  }
+  + .clients-block{
+    border-top: 1px solid $color-mine-shaft;
+  }
+}
+
+.contact{
+  margin-top: 64px;
+  a{
+    @include fsz(24px);
+    color: $color-white;
+    font-weight: $font-semibold;
+    line-height: 1.2;
+    &:hover{
+      color: $color-white;
+    }
+  }
+}
+.made{
+  //position: absolute;
+  color: $color-silver;
+  text-align: center;
+  margin-top: 16px;
+  line-height: 1.2;
+}
